@@ -204,7 +204,7 @@ export default function Home(): React.ReactElement {
             capabilities range from lettering and logos, to appliqué, sequins, 3D puff, thread colors to match your
             design, using different types of fills including satin stitch, complex fill, run stitch, triple run, motif,
             backstitch and manual stitch. Logos, monograms, emblems and any design can be digitized according to the
-            customer's exact requirements.
+            customer&apos;s exact requirements.
           </p>
           <ul className="flex flex-col sm:flex-wrap sm:col-row text-[1rem] sm:text-[1.4rem]   items-center px-4 m-auto my-10  sm:flex-row sm:justify-between">
             <li className="w-[80%] sm:w-[20%] flex flex-col justify-center items-center">
