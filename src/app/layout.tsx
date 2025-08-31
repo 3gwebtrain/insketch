@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
 import "./globals.css";
+import React from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const poppinsRegular = localFont({
+  src: "../../public/fonts/Poppins-Regular.otf",
+  variable: "--poppins-regular",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppinsBold = localFont({
+  src: "../../public/fonts/Poppins-Bold.otf",
+  variable: "--poppins-bold",
+});
+const poppinsSemiBold = localFont({
+  src: "../../public/fonts/Poppins-SemiBold.otf",
+  variable: "--poppins-semi-bold",
 });
 
 export const metadata: Metadata = {
@@ -21,13 +28,15 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>):React.ReactElement {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${poppinsRegular.variable} ${poppinsBold.variable} ${poppinsSemiBold.variable} antialiased`}>
+        <section className="max-w-[1024px] mx-auto min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </section>
       </body>
     </html>
   );
